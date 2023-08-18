@@ -36,4 +36,34 @@ ans1 =
   |> Enum.map(fn round -> Day01.Part1.outcome_score(round) + Day01.Part1.shape_score(round) end)
   |> Enum.sum()
 
-  IO.puts("part1: #{inspect(ans1)}")
+IO.puts("part1: #{inspect(ans1)}")
+
+# part2
+
+# x = lose
+# y = draw
+# z = win
+
+defmodule Day01.Part2 do
+  def score(round) do
+    case round do
+      round when round in ["B X"] -> 1
+      round when round in ["C X"] -> 2
+      round when round in ["A X"] -> 3
+      round when round in ["A Y"] -> 4
+      round when round in ["B Y"] -> 5
+      round when round in ["C Y"] -> 6
+      round when round in ["C Z"] -> 7
+      round when round in ["A Z"] -> 8
+      round when round in ["B Z"] -> 9
+    end
+  end
+end
+
+ans2 =
+  input
+  |> String.split("\r\n", trim: true)
+  |> Enum.map(fn round -> Day01.Part2.score(round) end)
+  |> Enum.sum()
+
+IO.puts("part2: #{inspect(ans2)}")

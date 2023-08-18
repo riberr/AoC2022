@@ -46,4 +46,4 @@ ans2 =
   |> Enum.take(-3)
   |> Enum.sum()
 
-  IO.puts("part2: #{inspect(ans2)}")
+IO.puts("part2: #{inspect(ans2)}")
