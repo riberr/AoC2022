@@ -49,7 +49,7 @@ class Day05 {
     }
 
     private Data setup() throws Exception {
-        List<String> lines = Files.readAllLines(Path.of("input")); //WARN
+        List<String> lines = Files.readAllLines(Path.of("input"));
 
         // find line that indicate number of columns
         int nrOfStacks = lines.stream()//Files.lines(Path.of("example_input"))
